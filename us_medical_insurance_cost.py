@@ -23,22 +23,23 @@ with open("insurance.csv") as ic_csv:
         region.append(row['region'])
         insurance_cost.append(float(row['charges']))
 
+    # Create patient dictionary
+    for row_num, row in enumerate(patient_data_dict):
+        patient_num = row_num
+        patient_data.update({
+            patient_num: {
+                f'Patient ID': patient_num,
+                'Age': row['age'],
+                'Sex': row['sex'],
+                'BMI': float(row['bmi']),
+                'Children': int(row['children']),
+                'Region': row['region'],
+                'Insurance Cost': float(row['charges'])
+            }
+        })
 
 
-# Fill patient dictionary
-for item in range(len(ages)):
-    patient_num = item
-    patient_data.update({
-        patient_num: {
-        f'Patient ID': patient_num,
-        'Age': ages[item],
-        'Sex': sex[item],
-        'BMI': bmis[item],
-        'Children': num_children[item],
-        'Region': region[item],
-        'Insurance Cost': insurance_cost[item]
-        }
-    })
+
 
 
 #Function to find averages
