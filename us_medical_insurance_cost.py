@@ -117,7 +117,7 @@ def sort_bmi(dict):
 
 sort_bmi(patient_data)
 
-#Smoker VS Non-Smoker Ratio
+#Smoker VS Non-Smoker
 smokers = []
 non_smokers = []
 def sort_by_smoker_status(dict):
